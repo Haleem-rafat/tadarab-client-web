@@ -5,11 +5,12 @@
   --color-primary: #BE1622;
   --color-mian-button: #191D25;
   --color-sub-button: #292951;
-  --color-header-background: rgba(41, 41, 81, 0.60);
+  --color-header-background: #29295199;
   --color-header-background-blur: blur(50px);
   --color-input-placeholder: #B0B0BA;
   --color-background-dropdown: #141820;
   --color-background-dropdown-active: #272A32;
+  --color-background-card: #13141ECC;
 
   --spacing-laptop: 1440px;
 }

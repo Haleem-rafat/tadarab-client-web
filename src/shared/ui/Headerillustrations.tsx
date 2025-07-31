@@ -20,8 +20,8 @@ export default function HeaderIllustrations() {
           width="1310.57"
           height="949.24"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feGaussianBlur stdDeviation="105" result="effect1_foregroundBlur_1_1706" />
         </filter>
@@ -32,8 +32,8 @@ export default function HeaderIllustrations() {
           x2="725.901"
           y2="301.658"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#6DDCFF" />
-          <stop offset="1" stop-color="#7F60F9" />
+          <stop stopColor="#6DDCFF" />
+          <stop offset="1" stopColor="#7F60F9" />
         </linearGradient>
       </defs>
     </svg>

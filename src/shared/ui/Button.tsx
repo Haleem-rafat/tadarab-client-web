@@ -10,6 +10,7 @@ interface ButtonProps {
   className?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -20,6 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   children,
   leftIcon,
   rightIcon,
+
   ...props
 }) => {
   return (

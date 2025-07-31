@@ -11,14 +11,21 @@ export default function HeroSection() {
       <div className="absolute z-10 h-full w-full bg-gradient-to-bl from-black via-black/90 to-black/50" />
       <Image
         src={mainHeroSectionImg}
-        alt="main-hero-section"
+        alt="شخص يتعلم عبر منصة تدرب - صورة رئيسية للقسم البطولي"
         className="absolute h-[51.25rem] max-w-[50rem] object-cover"
+        priority
+        quality={85}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+        placeholder="blur"
       />
 
       <Image
         src={womenHeroSectionImg}
-        alt="women-hero-section"
+        alt="امرأة تتعلم عبر منصة تدرب - صورة ثانوية للقسم البطولي"
         className="absolute right-0 bottom-0 z-10 hidden h-[42.25rem] w-[31rem] object-cover lg:block"
+        quality={85}
+        sizes="(max-width: 1200px) 0vw, 511px"
+        placeholder="blur"
       />
       <div className="absolute inset-0 z-10 flex justify-center text-white">
         <div className="flex flex-col items-center justify-center">
@@ -35,7 +42,8 @@ export default function HeroSection() {
 
           <Button
             leftIcon={<FaArrowLeftLong size={18} />}
-            className="mt-4 px-10 py-3 text-base font-extrabold lg:py-4.5">
+            className="mt-4 px-10 py-3 text-base font-extrabold lg:py-4.5"
+            aria-label="ابدأ التعلم الآن - انقر للانتقال إلى صفحة الدورات التدريبية">
             ابدأ التعلم الآن
           </Button>
         </div>
