@@ -14,6 +14,7 @@ export {
 export { default as Header } from './components/Header';
 export { default as MainCourseCard } from './ui/MainCourseCard';
 export { default as CourseCardSkeleton } from './ui/CourseCardSkeleton';
+export { default as MianCategoryChip } from './ui/MianCategoryChip';
 
 // Main form
 export { Input } from './ui/Input';

@@ -12,7 +12,7 @@ interface IGetAllCategoriesParams {
 
 class categoriesService {
   public async getAllCategories(
-    params: IGetAllCategoriesParams
+    params?: IGetAllCategoriesParams
   ): Promise<IResponse<ICategory, 'list'>> {
     const { data } = await api.get(EAPI.CATEGORIES, { params });
     return data;

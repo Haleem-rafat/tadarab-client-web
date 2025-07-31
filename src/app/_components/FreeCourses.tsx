@@ -17,7 +17,7 @@ import {
 } from '@/shared';
 import HeaderCardSection from '@/shared/components/HeaderCardsSection';
 
-const PER_PAGE = 10;
+const PER_PAGE = 6;
 
 export default function FreeCourses() {
   const [pageIndex, setPageIndex] = useState(1);
