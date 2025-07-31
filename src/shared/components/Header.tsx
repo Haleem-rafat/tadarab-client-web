@@ -21,7 +21,7 @@ export default function Header() {
         <HeaderIllustrations />
       </div>
       <div className="bg-header-background backdrop-blur-header-background-blur px-5">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-5 py-3 text-sm font-bold text-white lg:justify-center">
+        <div className="max-w-laptop mx-auto flex items-center justify-between gap-5 py-3 text-sm font-bold text-white lg:justify-center">
           <Button variant="underline" className="relative z-50 text-sm font-extrabold">
             اشترك الآن
           </Button>
@@ -33,7 +33,7 @@ export default function Header() {
         </div>
       </div>
       <div className="bg-background relative z-50 px-5">
-        <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-5 py-2">
+        <div className="max-w-laptop mx-auto flex w-full items-center justify-between gap-5 py-2">
           <div className="flex items-center gap-3">
             <Button variant="text" className="py-3 text-sm font-bold">
               <Image src={shopCarIcon} alt="shop-car" />

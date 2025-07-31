@@ -10,6 +10,8 @@
   --color-input-placeholder: #B0B0BA;
   --color-background-dropdown: #141820;
   --color-background-dropdown-active: #272A32;
+
+  --spacing-laptop: 1440px;
 }
 
 body {
