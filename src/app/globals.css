@@ -12,8 +12,11 @@
   --color-background-dropdown-active: #272A32;
   --color-background-card: #13141ECC;
   --color-border-mian-category: #333A47;
+  --color-background-secondary-categories: #272A31;
 
   --spacing-laptop: 1440px;
+
+  --shadow-secondary-categories: 0 0 30.827px 5.138px rgba(129,134,211,0.25);
 }
 
 body {

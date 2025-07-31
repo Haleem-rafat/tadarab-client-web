@@ -16,7 +16,7 @@ export default function Header() {
   console.log(searchName);
 
   return (
-    <div className="fixed top-0 right-0 left-0 z-50">
+    <div className="fixed top-0 right-0 left-0 z-30">
       <div className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
         <HeaderIllustrations />
       </div>
