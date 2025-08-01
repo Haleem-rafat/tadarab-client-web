@@ -68,44 +68,48 @@ export default function SecondaryCategoyChip({
   const icon2 = icon ? mappedIconPath : getRandomIcon();
 
   return (
-    <div className="grid grid-cols-1 gap-4 py-7">
+    <div className="flex flex-col gap-4 py-7">
       {/* First row */}
-      <div className="bg-background-secondary-categories shadow-secondary-categories relative w-fit rounded-[25.689px] p-[1.284px]">
-        <div className="absolute inset-0 rounded-[25.689px] bg-gradient-to-b from-[#6DDCFF] via-[#7F60F9] to-[#00040D] opacity-100"></div>
-        <div className="bg-background-secondary-categories relative h-full w-full rounded-[24.405px] px-6 py-4">
-          <div className="flex items-center justify-between gap-4">
-            <span className="text-lg font-bold whitespace-nowrap text-white">{title1}</span>
-            <div className="flex-shrink-0">
-              <Image
-                src={icon1}
-                alt={title1}
-                className="h-8 w-8"
-                onError={(e) => {
-                  console.log('Icon not found:', icon1);
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
+      <div className="">
+        <div className="bg-background-secondary-categories shadow-secondary-categories relative w-fit rounded-[25.689px] p-[1.284px]">
+          <div className="absolute inset-0 rounded-[25.689px] bg-gradient-to-b from-[#6DDCFF] via-[#7F60F9] to-[#00040D] opacity-100"></div>
+          <div className="bg-background-secondary-categories relative h-full w-full rounded-[24.405px] px-6 py-4">
+            <div className="flex items-center justify-between gap-4">
+              <span className="text-lg font-bold whitespace-nowrap text-white">{title1}</span>
+              <div className="flex-shrink-0">
+                <Image
+                  src={icon1}
+                  alt={title1}
+                  className="h-8 w-8"
+                  onError={(e) => {
+                    console.log('Icon not found:', icon1);
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Second row */}
-      <div className="bg-background-secondary-categories shadow-secondary-categories relative w-fit rounded-[25.689px] p-[1.284px]">
-        <div className="absolute inset-0 rounded-[25.689px] bg-gradient-to-b from-[#6DDCFF] via-[#7F60F9] to-[#00040D] opacity-100"></div>
-        <div className="bg-background-secondary-categories relative h-full w-full rounded-[24.405px] px-6 py-4">
-          <div className="flex items-center justify-between gap-4">
-            <span className="text-lg font-bold whitespace-nowrap text-white">{title2}</span>
-            <div className="flex-shrink-0">
-              <Image
-                src={icon2}
-                alt={title2}
-                className="h-8 w-8"
-                onError={(e) => {
-                  console.log('Icon not found:', icon2);
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
+      <div className="flex flex-wrap">
+        <div className="bg-background-secondary-categories shadow-secondary-categories relative w-fit rounded-[25.689px] p-[1.284px]">
+          <div className="absolute inset-0 rounded-[25.689px] bg-gradient-to-b from-[#6DDCFF] via-[#7F60F9] to-[#00040D] opacity-100"></div>
+          <div className="bg-background-secondary-categories relative h-full w-full rounded-[24.405px] px-6 py-4">
+            <div className="flex items-center justify-between gap-4">
+              <span className="text-lg font-bold whitespace-nowrap text-white">{title2}</span>
+              <div className="flex-shrink-0">
+                <Image
+                  src={icon2}
+                  alt={title2}
+                  className="h-8 w-8"
+                  onError={(e) => {
+                    console.log('Icon not found:', icon2);
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>

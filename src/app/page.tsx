@@ -6,18 +6,20 @@ import FreeCourses from './_components/FreeCourses';
 import Categories from './_components/Categories';
 import StartYourLearningJourney from './_components/StartYourLearningJourney';
 import Feedback from './_components/Feedback';
+import ForBusiness from './_components/ForBusiness';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center px-5">
+    <div className="flex flex-col items-center justify-center">
       <HeroSection />
       <BestSellerCourses />
       <NewCourses />
+      <MostPopularCourses />
       <Categories />
       <FreeCourses />
       <StartYourLearningJourney />
       <Feedback />
-      <MostPopularCourses />
+      <ForBusiness />
     </div>
   );
 }

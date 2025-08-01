@@ -25,7 +25,6 @@ export default function Categories() {
       <HeaderCardSection whiteTitle="أقسام" redTitle="الدورات" textButton="جميع الدورات" />
 
       <div className="mt-5">
-        {/* Gradient border container */}
         <Carousel
           className="w-full"
           opts={{
