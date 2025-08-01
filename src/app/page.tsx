@@ -8,6 +8,7 @@ import StartYourLearningJourney from './_components/StartYourLearningJourney';
 import Feedback from './_components/Feedback';
 import ForBusiness from './_components/ForBusiness';
 import ContactUs from './_components/ContactUs';
+import Trainers from './_components/Trainers';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <StartYourLearningJourney />
       <Feedback />
       <ForBusiness />
+      <Trainers />
       <ContactUs />
     </div>
   );

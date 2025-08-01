@@ -7,4 +7,7 @@ export enum SWR_KEYS {
 
   // Categories
   CATEGORIES = 'categories',
+
+  // Trainers
+  TRAINERS = 'trainers',
 }
