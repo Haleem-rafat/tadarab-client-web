@@ -5,6 +5,7 @@ import NewCourses from './_components/NewCourses';
 import FreeCourses from './_components/FreeCourses';
 import Categories from './_components/Categories';
 import StartYourLearningJourney from './_components/StartYourLearningJourney';
+import Feedback from './_components/Feedback';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Categories />
       <FreeCourses />
       <StartYourLearningJourney />
+      <Feedback />
       <MostPopularCourses />
     </div>
   );
