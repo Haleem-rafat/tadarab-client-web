@@ -45,7 +45,7 @@ export default function NewCourses() {
   );
 
   return (
-    <div className="max-w-laptop mx-auto w-full">
+    <section className="max-w-laptop mx-auto w-full">
       <HeaderCardSection whiteTitle="الدورات" redTitle="الجديدة" textButton="المزيد" />
 
       <div className="mt-5">
@@ -101,6 +101,6 @@ export default function NewCourses() {
           )}
         </Carousel>
       </div>
-    </div>
+    </section>
   );
 }

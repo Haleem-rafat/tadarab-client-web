@@ -6,7 +6,7 @@ import { Button } from '@/shared';
 
 export default function HeroSection() {
   return (
-    <div className="max-w-laptop relative mx-auto mt-20 h-[51.25rem] w-full overflow-hidden">
+    <section className="max-w-laptop relative mx-auto mt-20 h-[51.25rem] w-full overflow-hidden">
       <div className="from-background absolute bottom-0 z-30 h-[12rem] w-full bg-gradient-to-t to-transparent" />
       <div className="absolute z-10 h-full w-full bg-gradient-to-bl from-black via-black/90 to-black/50" />
       <Image
@@ -48,6 +48,6 @@ export default function HeroSection() {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

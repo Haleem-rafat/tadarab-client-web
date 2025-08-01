@@ -59,7 +59,7 @@ export default function BestSellerCourses() {
   };
 
   return (
-    <div className="max-w-laptop mx-auto w-full">
+    <section className="max-w-laptop mx-auto w-full">
       <HeaderCardSection whiteTitle="الدورات" redTitle="الأكثر مبيعاً" textButton="المزيد" />
 
       <div className="mt-5">
@@ -158,6 +158,6 @@ export default function BestSellerCourses() {
           )}
         </Carousel>
       </div>
-    </div>
+    </section>
   );
 }

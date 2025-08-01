@@ -21,7 +21,7 @@ export default function Categories() {
   );
 
   return (
-    <div className="max-w-laptop mx-auto w-full">
+    <section className="max-w-laptop mx-auto w-full">
       <HeaderCardSection whiteTitle="أقسام" redTitle="الدورات" textButton="جميع الدورات" />
 
       <div className="mt-5">
@@ -75,6 +75,6 @@ export default function Categories() {
           )}
         </Carousel>
       </div>
-    </div>
+    </section>
   );
 }

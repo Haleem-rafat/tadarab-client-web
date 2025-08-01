@@ -2,6 +2,7 @@
 export { default as Button } from './ui/Button';
 export { default as HeaderIllustrations } from './ui/Headerillustrations';
 export { default as MainTadarabLogo } from './ui/MainTadarabLogo';
+export { default as WhiteTadarabLogo } from './ui/WhiteTadarabLogo';
 export {
   Carousel,
   CarouselContent,

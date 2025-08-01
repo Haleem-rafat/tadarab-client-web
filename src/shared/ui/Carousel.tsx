@@ -224,7 +224,7 @@ function CarouselNext({
         variant={variant}
         className={classNames(
           { hidden: !canScrollNext },
-          'absolute z-30 !h-14 !w-14 !rounded-full bg-white/10 backdrop-blur-md',
+          'absolute !h-14 !w-14 !rounded-full bg-white/10 backdrop-blur-md',
           orientation === 'horizontal'
             ? 'top-1/2 -right-12 -translate-y-1/2'
             : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
