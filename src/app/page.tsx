@@ -7,10 +7,11 @@ import Categories from './_components/Categories';
 import StartYourLearningJourney from './_components/StartYourLearningJourney';
 import Feedback from './_components/Feedback';
 import ForBusiness from './_components/ForBusiness';
+import ContactUs from './_components/ContactUs';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center gap-x-16 lg:gap-y-20">
       <HeroSection />
       <BestSellerCourses />
       <NewCourses />
@@ -20,6 +21,7 @@ export default function Home() {
       <StartYourLearningJourney />
       <Feedback />
       <ForBusiness />
+      <ContactUs />
     </div>
   );
 }

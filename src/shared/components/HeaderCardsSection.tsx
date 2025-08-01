@@ -16,7 +16,7 @@ export default function HeaderCardSection({
   linkButton,
 }: IHeaderCardSectionProps) {
   return (
-    <div className="mt-20 flex w-full items-center justify-between">
+    <div className="mb-6 flex w-full items-center justify-between">
       <div>
         {textButton && (
           <Button

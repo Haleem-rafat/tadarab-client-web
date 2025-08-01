@@ -7,7 +7,7 @@ import { WhiteTadarabLogo } from '@/shared';
 export default function StartYourLearningJourney() {
   return (
     <section
-      className="bg-green-light relative mx-auto mt-24 mb-20 flex h-[500px] w-full max-w-[1240px] items-center justify-center overflow-hidden rounded-3xl text-center"
+      className="bg-green-light relative mx-auto flex h-[500px] w-full max-w-[1240px] items-center justify-center overflow-hidden rounded-3xl text-center"
       aria-labelledby="learning-journey-title"
       role="banner">
       <div className="absolute bottom-0 z-10 h-full w-full bg-gradient-to-tr from-[#051015] to-[#216A581A] lg:hidden" />

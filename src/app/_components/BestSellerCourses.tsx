@@ -62,7 +62,7 @@ export default function BestSellerCourses() {
     <section className="max-w-laptop mx-auto w-full">
       <HeaderCardSection whiteTitle="الدورات" redTitle="الأكثر مبيعاً" textButton="المزيد" />
 
-      <div className="mt-5">
+      <div className="my-5">
         <Carousel
           className="w-full"
           opts={{
