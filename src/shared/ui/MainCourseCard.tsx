@@ -53,7 +53,7 @@ export default function MainCourseCard({
           handleCardClick();
         }
       }}>
-      <div className={`relative h-[340px] overflow-hidden rounded-xl lg:h-[180px]`}>
+      <div className={`relative h-[340px] overflow-hidden rounded-none lg:h-[180px] lg:rounded-xl`}>
         {!imageError ? (
           <>
             <Image
