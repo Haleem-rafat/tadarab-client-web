@@ -11,7 +11,7 @@ import ContactUs from './_components/ContactUs';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center gap-x-16 lg:gap-y-20">
+    <div className="flex flex-col items-center justify-center gap-y-16 lg:gap-y-20">
       <HeroSection />
       <BestSellerCourses />
       <NewCourses />

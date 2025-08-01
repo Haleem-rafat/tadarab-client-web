@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Almarai } from 'next/font/google';
-import { Header } from '@/shared';
+import { Header, Footer } from '@/shared';
 
 import './globals.css';
 
@@ -26,6 +26,7 @@ export default function RootLayout({
       <body className={`${almarai.variable} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

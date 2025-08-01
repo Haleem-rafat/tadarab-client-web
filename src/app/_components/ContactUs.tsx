@@ -29,7 +29,7 @@ export default function ContactUs() {
           </div>
 
           {/* Image Section - Right on Desktop, Top on Mobile */}
-          <div className="absolute right-10 bottom-32 order-1 flex items-center justify-center lg:-bottom-36 lg:order-2 lg:w-1/2">
+          <div className="absolute right-0 bottom-42 order-1 flex items-center justify-center lg:right-10 lg:-bottom-36 lg:order-2 lg:w-1/2">
             <Image
               src={contactUsImg}
               alt="صورة التواصل معنا - فريق خدمة العملاء في تدرب"

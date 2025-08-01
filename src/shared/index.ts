@@ -11,9 +11,11 @@ export {
   CarouselPrevious,
   CarouselNext,
 } from './ui/Carousel';
+export { default as Accordion } from './ui/Accordion';
 
 // Main components
 export { default as Header } from './components/Header';
+export { default as Footer } from './components/Footer';
 export { default as MainCourseCard } from './ui/MainCourseCard';
 export { default as CourseCardSkeleton } from './ui/CourseCardSkeleton';
 export { default as MianCategoryChip } from './ui/MianCategoryChip';
