@@ -262,11 +262,8 @@ export default function Trainers() {
         {!isMobile && (
           <button
             type="button"
-            onClick={hasMore ? handleLoadMore : undefined}
-            disabled={isLoading && hasMore}
-            className={`swiper-button-next absolute top-1/2 right-4 z-10 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-all lg:flex ${
-              hasMore && isLoading ? 'animate-pulse' : ''
-            }`}>
+            onClick={handleLoadMore}
+            className={`swiper-button-next absolute top-1/2 right-4 z-10 hidden h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-all lg:flex`}>
             <svg
               className={`h-6 w-6 ${hasMore && isLoading ? 'animate-spin' : ''}`}
               fill="none"

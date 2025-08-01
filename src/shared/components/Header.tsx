@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { BiChevronDown, BiSearch } from 'react-icons/bi';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
@@ -11,28 +11,42 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 
 export default function Header() {
   const isMobile = useMediaQuery('(max-width: 768px)');
-
   const [searchName, setSearchName] = useState('');
-  console.log(searchName);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="fixed top-0 right-0 left-0 z-30">
-      <div className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
-        <HeaderIllustrations />
-      </div>
-      <div className="bg-header-background backdrop-blur-header-background-blur px-5">
-        <div className="max-w-laptop mx-auto flex items-center justify-between gap-5 py-3 text-sm font-bold text-white lg:justify-center">
-          <Button variant="underline" className="relative z-50 text-sm font-extrabold">
-            اشترك الآن
-          </Button>
-          <p className="relative z-50 text-xs font-bold lg:text-base">
-            {isMobile
-              ? 'خصم 80% بمناسبة شهر رمضان الكريم'
-              : 'خصم 80% بمناسبة شهر رمضان الكريم لفترة محدودة'}
-          </p>
+      {!isScrolled && (
+        <div className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
+          <HeaderIllustrations />
         </div>
-      </div>
-      <div className="bg-background relative z-50 px-5">
+      )}
+      {!isScrolled && (
+        <div className="bg-header-background backdrop-blur-header-background-blur px-5 transition-all duration-300">
+          <div className="max-w-laptop mx-auto flex items-center justify-between gap-5 py-3 text-sm font-bold text-white lg:justify-center">
+            <Button variant="underline" className="relative z-50 text-sm font-extrabold">
+              اشترك الآن
+            </Button>
+            <p className="relative z-50 text-xs font-bold lg:text-base">
+              {isMobile
+                ? 'خصم 80% بمناسبة شهر رمضان الكريم'
+                : 'خصم 80% بمناسبة شهر رمضان الكريم لفترة محدودة'}
+            </p>
+          </div>
+        </div>
+      )}
+      <div
+        className={`bg-background relative z-50 px-5 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
         <div className="max-w-laptop mx-auto flex w-full items-center justify-between gap-5 py-2">
           <div className="flex items-center gap-3">
             <Button variant="text" className="py-3 text-sm font-bold">

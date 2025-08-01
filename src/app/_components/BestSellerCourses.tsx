@@ -66,7 +66,7 @@ export default function BestSellerCourses() {
         <Carousel
           className="w-full"
           opts={{
-            align: 'end',
+            align: 'center',
             loop: true,
           }}>
           <CarouselContent className="flex items-center">
@@ -75,14 +75,14 @@ export default function BestSellerCourses() {
               Array.from({ length: 20 }).map((_, index) => (
                 <CarouselItem
                   key={`category-skeleton-${index}`}
-                  className="md:basis-1/2 lg:basis-auto">
+                  className="basis-1/2 lg:basis-auto">
                   <div className="h-12 w-24 animate-pulse rounded-xl bg-gray-700" />
                 </CarouselItem>
               ))}
 
             {categoriesData &&
               categoriesData?.map((category: ICategory) => (
-                <CarouselItem key={category.id} className="md:basis-1/2 lg:basis-auto">
+                <CarouselItem key={category.id} className="basis-1/2 lg:basis-auto">
                   <MianCategoryChip
                     category={category}
                     isSelected={selectedCategoryId === category.id}
@@ -109,7 +109,7 @@ export default function BestSellerCourses() {
         <Carousel
           className="w-full"
           opts={{
-            align: 'start',
+            align: 'center',
             loop: false,
             skipSnaps: false,
             dragFree: true,
@@ -118,14 +118,14 @@ export default function BestSellerCourses() {
             {isLoading &&
               pageIndex === 1 &&
               Array.from({ length: 8 }).map((_, index) => (
-                <CarouselItem key={`skeleton-${index}`} className="md:basis-1/2 lg:basis-1/4">
+                <CarouselItem key={`skeleton-${index}`} className="basis-1/2 lg:basis-1/4">
                   <CourseCardSkeleton />
                 </CarouselItem>
               ))}
 
             {dataList &&
               dataList?.map((course: any) => (
-                <CarouselItem key={course.id} className="md:basis-1/2 lg:basis-1/4">
+                <CarouselItem key={course.id} className="basis-1/2 lg:basis-1/4">
                   <MainCourseCard course={course} />
                 </CarouselItem>
               ))}
@@ -134,9 +134,7 @@ export default function BestSellerCourses() {
             {isLoading &&
               pageIndex > 1 &&
               Array.from({ length: 3 }).map((_, index) => (
-                <CarouselItem
-                  key={`loading-skeleton-${index}`}
-                  className="md:basis-1/2 lg:basis-1/4">
+                <CarouselItem key={`loading-skeleton-${index}`} className="basis-1/2 lg:basis-1/4">
                   <CourseCardSkeleton />
                 </CarouselItem>
               ))}

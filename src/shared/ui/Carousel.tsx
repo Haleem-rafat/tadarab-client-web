@@ -6,6 +6,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { Button } from '@/shared/index';
+import useMediaQuery from '@/hooks/useMediaQuery';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -161,7 +162,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
 }
 
 function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
-  const { orientation } = useCarousel();
+  const { orientation, pagination } = useCarousel();
 
   return (
     <div
@@ -169,8 +170,10 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={classNames(
-        'min-w-0 shrink-0 grow-0 basis-full',
+        'min-w-0 shrink-0 grow-0',
         orientation === 'horizontal' ? 'pl-4' : 'pt-4',
+        pagination && 'basis-full',
+        !pagination && 'basis-1/2',
         className
       )}
       {...props}
@@ -184,8 +187,11 @@ function CarouselPrevious({
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollPrev, canScrollPrev, pagination } = useCarousel();
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   if (pagination) return null;
+
+  if (isMobile) return null;
 
   return (
     <div

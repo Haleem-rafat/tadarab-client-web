@@ -22,14 +22,14 @@ export default function HeaderCardSection({
           <Button
             leftIcon={<MdOutlineKeyboardArrowLeft size={24} />}
             variant="text"
-            className="text-2xl font-bold"
+            className="text-sm font-bold lg:text-2xl"
             onClick={linkButton}>
             {textButton}
           </Button>
         )}
       </div>
       <div>
-        <p className="text-3xl font-extrabold text-white">
+        <p className="text-lg font-extrabold text-white lg:text-3xl">
           {whiteTitle} <span className="text-primary">{redTitle}</span>
         </p>
       </div>
