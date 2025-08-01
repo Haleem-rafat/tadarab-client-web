@@ -17,6 +17,7 @@ type CarouselProps = {
   plugins?: CarouselPlugin;
   orientation?: 'horizontal' | 'vertical';
   setApi?: (api: CarouselApi) => void;
+  pagination?: boolean;
 };
 
 type CarouselContextProps = {
@@ -26,6 +27,8 @@ type CarouselContextProps = {
   scrollNext: () => void;
   canScrollPrev: boolean;
   canScrollNext: boolean;
+  selectedIndex: number;
+  scrollTo: (index: number) => void;
 } & CarouselProps;
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
@@ -47,6 +50,7 @@ function Carousel({
   plugins,
   className,
   children,
+  pagination,
   ...props
 }: React.ComponentProps<'div'> & CarouselProps) {
   const [carouselRef, api] = useEmblaCarousel(
@@ -58,12 +62,21 @@ function Carousel({
   );
   const [canScrollPrev, setCanScrollPrev] = React.useState(false);
   const [canScrollNext, setCanScrollNext] = React.useState(false);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const onSelect = React.useCallback((api: CarouselApi) => {
     if (!api) return;
     setCanScrollPrev(api.canScrollPrev());
     setCanScrollNext(api.canScrollNext());
+    setSelectedIndex(api.selectedScrollSnap());
   }, []);
+
+  const scrollTo = React.useCallback(
+    (index: number) => {
+      api?.scrollTo(index);
+    },
+    [api]
+  );
 
   const scrollPrev = React.useCallback(() => {
     api?.scrollPrev();
@@ -113,6 +126,9 @@ function Carousel({
         scrollNext,
         canScrollPrev,
         canScrollNext,
+        selectedIndex,
+        scrollTo,
+        pagination,
       }}>
       <div
         onKeyDownCapture={handleKeyDown}
@@ -167,7 +183,9 @@ function CarouselPrevious({
   variant = 'text',
   ...props
 }: React.ComponentProps<typeof Button>) {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel();
+  const { orientation, scrollPrev, canScrollPrev, pagination } = useCarousel();
+
+  if (pagination) return null;
 
   return (
     <div
@@ -207,7 +225,9 @@ function CarouselNext({
   hasMore?: boolean;
   onLoadMore?: () => void;
 }) {
-  const { orientation, scrollNext, canScrollNext } = useCarousel();
+  const { orientation, scrollNext, canScrollNext, pagination } = useCarousel();
+
+  if (pagination) return null;
 
   const handleClick = hasMore && onLoadMore ? onLoadMore : scrollNext;
 
@@ -239,11 +259,37 @@ function CarouselNext({
   );
 }
 
+function CarouselPagination() {
+  const { api, selectedIndex, scrollTo, pagination } = useCarousel();
+
+  if (!pagination || !api) return null;
+
+  const slidesCount = api.slideNodes().length;
+
+  return (
+    <div className="mt-4 flex w-full justify-center gap-2">
+      {Array.from({ length: slidesCount }).map((_, index) => (
+        <button
+          type="button"
+          key={index}
+          onClick={() => scrollTo(index)}
+          className={classNames(
+            'h-2 w-20 transition-all duration-300',
+            selectedIndex === index ? 'w-20 bg-white' : 'bg-white/30 hover:bg-white/50'
+          )}
+          aria-label={`Go to slide ${index + 1}`}
+        />
+      ))}
+    </div>
+  );
+}
+
 export {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselPagination,
   type CarouselApi,
 };
