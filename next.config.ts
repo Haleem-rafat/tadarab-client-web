@@ -89,20 +89,6 @@ const nextConfig: NextConfig = {
 
   // Webpack optimizations
   webpack: (config, { dev, isServer }) => {
-    // Bundle analyzer
-    // eslint-disable-next-line no-undef
-    if (process.env.ANALYZE === 'true' && !isServer) {
-      // eslint-disable-next-line no-undef
-      const { BundleAnalyzerPlugin } = require('@next/bundle-analyzer');
-      config.plugins.push(
-        new BundleAnalyzerPlugin({
-          analyzerMode: 'static',
-          openAnalyzer: false,
-          reportFilename: './bundle-analysis.html',
-        })
-      );
-    }
-
     // Optimize bundle size
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
@@ -114,26 +100,6 @@ const nextConfig: NextConfig = {
             chunks: 'all',
           },
         },
-      };
-    }
-
-    // Modern browser targeting - reduce unnecessary transpilation
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        // Only polyfill what's absolutely necessary
-        fs: false,
-        net: false,
-        tls: false,
-        crypto: false,
-        stream: false,
-        url: false,
-        zlib: false,
-        http: false,
-        https: false,
-        assert: false,
-        os: false,
-        path: false,
       };
     }
 
